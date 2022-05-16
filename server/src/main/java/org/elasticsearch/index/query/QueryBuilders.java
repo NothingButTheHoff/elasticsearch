@@ -42,11 +42,11 @@ public final class QueryBuilders {
     /**
      * Creates a match query with type "BOOLEAN" for the provided field name and text.
      *
-     * @param name The field name.
+     * @param fieldName The field name.
      * @param text The query text (to be analyzed).
      */
-    public static MatchQueryBuilder matchQuery(String name, Object text) {
-        return new MatchQueryBuilder(name, text);
+    public static MatchQueryBuilder matchQuery(String fieldName, Object text) {
+        return new MatchQueryBuilder(fieldName, text);
     }
 
     /**
@@ -62,31 +62,31 @@ public final class QueryBuilders {
     /**
      * Creates a text query with type "BOOL_PREFIX" for the provided field name and text.
      *
-     * @param name The field name.
+     * @param fieldName The field name.
      * @param text The query text (to be analyzed).
      */
-    public static MatchBoolPrefixQueryBuilder matchBoolPrefixQuery(String name, Object text) {
-        return new MatchBoolPrefixQueryBuilder(name, text);
+    public static MatchBoolPrefixQueryBuilder matchBoolPrefixQuery(String fieldName, Object text) {
+        return new MatchBoolPrefixQueryBuilder(fieldName, text);
     }
 
     /**
      * Creates a text query with type "PHRASE" for the provided field name and text.
      *
-     * @param name The field name.
+     * @param fieldName The field name.
      * @param text The query text (to be analyzed).
      */
-    public static MatchPhraseQueryBuilder matchPhraseQuery(String name, Object text) {
-        return new MatchPhraseQueryBuilder(name, text);
+    public static MatchPhraseQueryBuilder matchPhraseQuery(String fieldName, Object text) {
+        return new MatchPhraseQueryBuilder(fieldName, text);
     }
 
     /**
      * Creates a match query with type "PHRASE_PREFIX" for the provided field name and text.
      *
-     * @param name The field name.
+     * @param fieldName The field name.
      * @param text The query text (to be analyzed).
      */
-    public static MatchPhrasePrefixQueryBuilder matchPhrasePrefixQuery(String name, Object text) {
-        return new MatchPhrasePrefixQueryBuilder(name, text);
+    public static MatchPhrasePrefixQueryBuilder matchPhrasePrefixQuery(String fieldName, Object text) {
+        return new MatchPhrasePrefixQueryBuilder(fieldName, text);
     }
 
     /**
@@ -110,12 +110,12 @@ public final class QueryBuilders {
 
     /**
      * A query to boost scores based on their proximity to the given origin for date, date_nanos and geo_point field types.
-     * @param name The field name
+     * @param fieldName The field name
      * @param origin The origin of the distance calculation. Can be a long, string or {@link GeoPoint}, depending on field type.
      * @param pivot The distance from the origin at which relevance scores receive half of the boost value.
      */
-    public static DistanceFeatureQueryBuilder distanceFeatureQuery(String name, Origin origin, String pivot) {
-        return new DistanceFeatureQueryBuilder(name, origin, pivot);
+    public static DistanceFeatureQueryBuilder distanceFeatureQuery(String fieldName, Origin origin, String pivot) {
+        return new DistanceFeatureQueryBuilder(fieldName, origin, pivot);
     }
 
     /**
@@ -128,116 +128,116 @@ public final class QueryBuilders {
     /**
      * A Query that matches documents containing a term.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      */
-    public static TermQueryBuilder termQuery(String name, String value) {
-        return new TermQueryBuilder(name, value);
+    public static TermQueryBuilder termQuery(String fieldName, String value) {
+        return new TermQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents containing a term.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      */
-    public static TermQueryBuilder termQuery(String name, int value) {
-        return new TermQueryBuilder(name, value);
+    public static TermQueryBuilder termQuery(String fieldName, int value) {
+        return new TermQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents containing a term.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      */
-    public static TermQueryBuilder termQuery(String name, long value) {
-        return new TermQueryBuilder(name, value);
+    public static TermQueryBuilder termQuery(String fieldName, long value) {
+        return new TermQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents containing a term.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      */
-    public static TermQueryBuilder termQuery(String name, float value) {
-        return new TermQueryBuilder(name, value);
+    public static TermQueryBuilder termQuery(String fieldName, float value) {
+        return new TermQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents containing a term.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      */
-    public static TermQueryBuilder termQuery(String name, double value) {
-        return new TermQueryBuilder(name, value);
+    public static TermQueryBuilder termQuery(String fieldName, double value) {
+        return new TermQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents containing a term.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      */
-    public static TermQueryBuilder termQuery(String name, boolean value) {
-        return new TermQueryBuilder(name, value);
+    public static TermQueryBuilder termQuery(String fieldName, boolean value) {
+        return new TermQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents containing a term.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      */
-    public static TermQueryBuilder termQuery(String name, Object value) {
-        return new TermQueryBuilder(name, value);
+    public static TermQueryBuilder termQuery(String fieldName, Object value) {
+        return new TermQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents using fuzzy query.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      *
      * @see #matchQuery(String, Object)
      * @see #rangeQuery(String)
      */
-    public static FuzzyQueryBuilder fuzzyQuery(String name, String value) {
-        return new FuzzyQueryBuilder(name, value);
+    public static FuzzyQueryBuilder fuzzyQuery(String fieldName, String value) {
+        return new FuzzyQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents using fuzzy query.
      *
-     * @param name  The name of the field
+     * @param fieldName  The name of the field
      * @param value The value of the term
      *
      * @see #matchQuery(String, Object)
      * @see #rangeQuery(String)
      */
-    public static FuzzyQueryBuilder fuzzyQuery(String name, Object value) {
-        return new FuzzyQueryBuilder(name, value);
+    public static FuzzyQueryBuilder fuzzyQuery(String fieldName, Object value) {
+        return new FuzzyQueryBuilder(fieldName, value);
     }
 
     /**
      * A Query that matches documents containing terms with a specified prefix.
      *
-     * @param name   The name of the field
+     * @param fieldName   The name of the field
      * @param prefix The prefix query
      */
-    public static PrefixQueryBuilder prefixQuery(String name, String prefix) {
-        return new PrefixQueryBuilder(name, prefix);
+    public static PrefixQueryBuilder prefixQuery(String fieldName, String prefix) {
+        return new PrefixQueryBuilder(fieldName, prefix);
     }
 
     /**
      * A Query that matches documents within an range of terms.
      *
-     * @param name The field name
+     * @param fieldName The field name
      */
-    public static RangeQueryBuilder rangeQuery(String name) {
-        return new RangeQueryBuilder(name);
+    public static RangeQueryBuilder rangeQuery(String fieldName) {
+        return new RangeQueryBuilder(fieldName);
     }
 
     /**
@@ -248,21 +248,21 @@ public final class QueryBuilders {
      * a Wildcard term should not start with one of the wildcards {@code *} or
      * {@code ?}. (The wildcard field type however, is optimised for leading wildcards)
      *
-     * @param name  The field name
+     * @param fieldName  The field name
      * @param query The wildcard query string
      */
-    public static WildcardQueryBuilder wildcardQuery(String name, String query) {
-        return new WildcardQueryBuilder(name, query);
+    public static WildcardQueryBuilder wildcardQuery(String fieldName, String query) {
+        return new WildcardQueryBuilder(fieldName, query);
     }
 
     /**
      * A Query that matches documents containing terms with a specified regular expression.
      *
-     * @param name   The name of the field
+     * @param fieldName   The name of the field
      * @param regexp The regular expression
      */
-    public static RegexpQueryBuilder regexpQuery(String name, String regexp) {
-        return new RegexpQueryBuilder(name, regexp);
+    public static RegexpQueryBuilder regexpQuery(String fieldName, String regexp) {
+        return new RegexpQueryBuilder(fieldName, regexp);
     }
 
     /**
